@@ -85,8 +85,37 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let number = Number(prompt("ВВедите число больше 100!!!"));
-while (number < 100 && number !== null) {
-  number = Number(prompt("ВВедите число больше 100!!!"));
+// let number = Number(prompt("ВВедите число больше 100!!!"));
+// while (number < 100 && number !== null) {
+//   number = Number(prompt("ВВедите число больше 100!!!"));
+// }
+// console.log(number);
+
+
+//Напишите функцию которая принимает число и перебирает числа от 0 до числа
+// Елси число в переборе делиться на 3 возвращать
+//fizz если делиться на 5 возвращать buzz
+//елси делиться на 3 и на 5 возвращить fizzbuzz
+
+function fizzbuzz(number) {
+  console.log(number);
+
+  for (let i = 0; i <= number; i += 1) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } 
+    else if (i % 3 === 0) {
+      console.log("fizz");
+    }
+     else if (i % 5 === 0) {
+      console.log("buzz");
+    }
+    else {
+      console.log(i);
+    }
+      
+  }
+
 }
-console.log(number);
+fizzbuzz(24);
+
