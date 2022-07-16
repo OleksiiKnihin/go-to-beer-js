@@ -30,13 +30,30 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
 
-const number = Number(prompt('Введи минуты'));
-console.log(number)
-let hours = Math.floor(number / 60);
-hours = String(hours).padStart(2, 0);
+// const number = Number(prompt('Введи минуты'));
+// console.log(number)
+// let hours = Math.floor(number / 60);
+// hours = String(hours).padStart(2, 0);
 
-console.log(hours)
-let minutes = number % 60
-minutes = String(minutes).padStart(2, 0);
-console.log(minutes)
-console.log(`${hours}:${minutes}`)
+// console.log(hours)
+// let minutes = number % 60
+// minutes = String(minutes).padStart(2, 0);
+// console.log(minutes)
+// console.log(`${hours}:${minutes}`)
+
+
+//Напишите цикл, который выводит в консоль
+//числа от max до min по убыванию
+// Додайте все четные числа от min до max
+const max = 50;
+const min = 23;
+let total = 0;
+for (let i = max; i >= min; i -= 1) {
+    
+    if (i % 2 !== 0) {
+        continue;
+    }
+    console.log(i);
+    total += i;
+}
+console.log(total);
