@@ -93,105 +93,126 @@
 
 
 //Нарциса знають всі, нарцис незнає нікого
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-];
-//нарцис  'Jhon'
-const people2 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+// ];
+// //нарцис  'Jhon'
+// const people2 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса
 
-const people4 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
+// const people4 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
 
-function findNarcys(array) {
-  let narcys = "";
-  for (const friend of array) {
-    // console.log(friend);
-    if (friend.know.length === 0) {
-      narcys = friend.name;
-      // console.log('narcys', friend.name);
-      break;
-    }
-  }
-  if (narcys === '') {
-        return "немає нарциса";
-  }
-  for (const friend of array) {
-    if (friend.name === narcys) {
-      continue;
-    }
-    if (!friend.know.includes(narcys)) {
-      return "немає нарциса";
-    }
-  }
-  return narcys;
-}
-console.log(findNarcys(people4));
+// function findNarcys(array) {
+//   let narcys = "";
+//   for (const friend of array) {
+//     // console.log(friend);
+//     if (friend.know.length === 0) {
+//       narcys = friend.name;
+//       // console.log('narcys', friend.name);
+//       break;
+//     }
+//   }
+//   if (narcys === '') {
+//         return "немає нарциса";
+//   }
+//   for (const friend of array) {
+//     if (friend.name === narcys) {
+//       continue;
+//     }
+//     if (!friend.know.includes(narcys)) {
+//       return "немає нарциса";
+//     }
+//   }
+//   return narcys;
+// }
+// console.log(findNarcys(people4));
+
+
+// =======================
+
+/*
+? Створіть масив genres з елементами Jazz і Blues.
+? Додайте «Рок-н-рол» до кінця.
+? Виведіть у консоль перший елемент масиву.
+? Виведіть у консоль останній елемент масиву. Код має працювати для масиву довільної довжини.
+? Видаліть перший елемент та виведіть його в консоль.
+? Вставте «Country» та «Reggy» на початок масиву.
+ */
+
+const genres = ['Jazz', 'Blues']
+console.log(genres.push("Рок-н-рол"));
+console.log(genres[0]);
+console.log(genres[genres.length - 1]);
+console.log(genres.shift());
+console.log(genres.unshift('Country', 'Reggy'));
+console.log(genres.splice(2, 0, 'Folk'));
+console.log(genres);
