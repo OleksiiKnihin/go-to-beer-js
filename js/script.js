@@ -85,8 +85,113 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let number = Number(prompt("ВВедите число больше 100!!!"));
-while (number < 100 && number !== null) {
-  number = Number(prompt("ВВедите число больше 100!!!"));
+// let number = Number(prompt("ВВедите число больше 100!!!"));
+// while (number < 100 && number !== null) {
+//   number = Number(prompt("ВВедите число больше 100!!!"));
+// }
+// console.log(number);
+
+
+//Нарциса знають всі, нарцис незнає нікого
+const people = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+];
+//нарцис  'Jhon'
+const people2 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса
+
+const people4 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Eva'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+function findNarcys(array) {
+  let narcys = "";
+  for (const friend of array) {
+    // console.log(friend);
+    if (friend.know.length === 0) {
+      narcys = friend.name;
+      // console.log('narcys', friend.name);
+      break;
+    }
+  }
+  if (narcys === '') {
+        return "немає нарциса";
+  }
+  for (const friend of array) {
+    if (friend.name === narcys) {
+      continue;
+    }
+    if (!friend.know.includes(narcys)) {
+      return "немає нарциса";
+    }
+  }
+  return narcys;
 }
-console.log(number);
+console.log(findNarcys(people4));
