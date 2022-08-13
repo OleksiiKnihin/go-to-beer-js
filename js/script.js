@@ -268,6 +268,8 @@ const vehicles = [
 
 //Реализовать фильтер по свойству amount и получить
 //только название модели
-const models = vehicles.filter(element => element.amount > 12).map(element => element.model);
+// const models = vehicles.filter(element => element.amount > 12).map(element => element.model);
 
+// console.log(models);
+const models = vehicles.reduce((acc, car) => (car.amount > 12) ? [...acc, car.model] : acc, [])
 console.log(models);
