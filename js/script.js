@@ -92,82 +92,82 @@
 // console.log(number);
 
 //Нарциса знають всі, нарцис незнає нікого
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-];
-//нарцис  'Jhon'
-const people2 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+// ];
+// //нарцис  'Jhon'
+// const people2 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса
 
-const people4 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people4 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 
 
 // //немає нарциса'
@@ -198,25 +198,25 @@ const people4 = [
 // console.log(findNarcys(people4));
 
 
-function findNarcys(array){
-  const narcys = array.find((element) => element.know.length === 0);
-  if (!narcys) {
-    return "немає нарциса";
-  }
-  const allKnow = array.every(element => {if (narcys.name === element.name) 
-    {return true} return element.know.includes(narcys.name)})
+// function findNarcys(array){
+//   const narcys = array.find((element) => element.know.length === 0);
+//   if (!narcys) {
+//     return "немає нарциса";
+//   }
+//   const allKnow = array.every(element => {if (narcys.name === element.name) 
+//     {return true} return element.know.includes(narcys.name)})
 
-  console.log(allKnow);
+//   console.log(allKnow);
 
-  if (allKnow){
-  return narcys.name;
-} else {
-  return "немає нарциса";
-}
+//   if (allKnow){
+//   return narcys.name;
+// } else {
+//   return "немає нарциса";
+// }
   
-}
+// }
 
-console.log(findNarcys(people));
+// console.log(findNarcys(people));
 
 
 // =======================
@@ -450,3 +450,22 @@ console.log(findNarcys(people));
 //   );
 
 // console.log(allTopics);
+
+
+// //Назначить скидку 20% на фрукты в массиве,
+//присвоить id для каждого продукта
+
+const fruits = [
+  { name: 'apple', price: 200 },
+  { name: 'orange', price: 300 },
+  { name: 'grapes', price: 750 },
+];
+
+const discontFruits = fruits.map(fruit => {
+  return {
+    ...fruit, id: Date.now(), 
+    price: fruit.price * 0.8
+  }
+});
+
+console.table(discontFruits);
