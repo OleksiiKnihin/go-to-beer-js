@@ -253,88 +253,88 @@
 // }
 // console.log(topSalary(salaries));
 
-const vehicles = [
-  {
-    make: "Honda",
-    model: "CR-V",
-    type: "suv",
-    amount: 14,
-    price: 24045,
-    onSale: true,
-  },
-  {
-    make: "Honda",
-    model: "Accord",
-    type: "sedan",
-    amount: 2,
-    price: 22455,
-    onSale: true,
-  },
-  {
-    make: "Mazda",
-    model: "Mazda 6",
-    type: "sedan",
-    amount: 8,
-    price: 24195,
-    onSale: false,
-  },
-  {
-    make: "Mazda",
-    model: "CX-9",
-    type: "suv",
-    amount: 7,
-    price: 31520,
-    onSale: true,
-  },
-  {
-    make: "Toyota",
-    model: "4Runner",
-    type: "suv",
-    amount: 19,
-    price: 34210,
-    onSale: false,
-  },
-  {
-    make: "Toyota",
-    model: "Sequoia",
-    type: "suv",
-    amount: 16,
-    price: 45560,
-    onSale: false,
-  },
-  {
-    make: "Toyota",
-    model: "Tacoma",
-    type: "truck",
-    amount: 4,
-    price: 24320,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "F-150",
-    type: "truck",
-    amount: 11,
-    price: 27110,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "Fusion",
-    type: "sedan",
-    amount: 13,
-    price: 22120,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "Explorer",
-    type: "suv",
-    amount: 6,
-    price: 31660,
-    onSale: false,
-  },
-];
+// const vehicles = [
+//   {
+//     make: "Honda",
+//     model: "CR-V",
+//     type: "suv",
+//     amount: 14,
+//     price: 24045,
+//     onSale: true,
+//   },
+//   {
+//     make: "Honda",
+//     model: "Accord",
+//     type: "sedan",
+//     amount: 2,
+//     price: 22455,
+//     onSale: true,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "Mazda 6",
+//     type: "sedan",
+//     amount: 8,
+//     price: 24195,
+//     onSale: false,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "CX-9",
+//     type: "suv",
+//     amount: 7,
+//     price: 31520,
+//     onSale: true,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "4Runner",
+//     type: "suv",
+//     amount: 19,
+//     price: 34210,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Sequoia",
+//     type: "suv",
+//     amount: 16,
+//     price: 45560,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Tacoma",
+//     type: "truck",
+//     amount: 4,
+//     price: 24320,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "F-150",
+//     type: "truck",
+//     amount: 11,
+//     price: 27110,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Fusion",
+//     type: "sedan",
+//     amount: 13,
+//     price: 22120,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Explorer",
+//     type: "suv",
+//     amount: 6,
+//     price: 31660,
+//     onSale: false,
+//   },
+// ];
 
 //Реализовать фильтер по свойству amount и получить
 //только название модели
@@ -344,7 +344,85 @@ const vehicles = [
 // const models = vehicles.reduce((acc, car) => (car.amount > 12) ? [...acc, car.model] : acc, [])
 // console.log(models);
 
-const carsOnSale = vehicles
-  .filter(({ onSale }) => onSale)
-  .sort((a, b) => b.price - a.price);
-console.table(carsOnSale);
+// const carsOnSale = vehicles
+//   .filter(({ onSale }) => onSale)
+//   .sort((a, b) => b.price - a.price);
+// console.table(carsOnSale);
+
+const courses = [
+  {
+    name: "Basic HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
+  },
+  {
+    name: "Intermediate HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
+  },
+  {
+    name: "Basic JavaScript",
+    topics: [
+      "VSCode",
+      "Type system",
+      "Loops",
+      "Function",
+      "Git",
+      "Conditions",
+      "Classes",
+      "GitHub",
+      "DOM",
+    ],
+  },
+  {
+    name: "Intermediate JavaScript",
+    topics: [
+      "VSCode",
+      "NPM",
+      "Bundlers",
+      "Transpiling",
+      "Git",
+      "Promises",
+      "AJAX",
+      "GitHub",
+    ],
+  },
+];
+//Собрать в allTopics массив всех предметов всех курсов
+//Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы
+
+// const allTopics = courses
+//   .flatMap((course) => course.topics)
+//   .filter((course, index, array) => array.indexOf(course) === index);
+
+// console.log(allTopics);
+
+// {NMP: 4, JS: 5}
+
+// const allTopics = courses
+//   .flatMap((course) => course.topics)
+//   .reduce((acc, element) => {
+//     acc[element] ? (acc[element] += 1) : (acc[element] = 1);
+
+// if (acc[element]) {
+//   acc[element] += 1;
+// } else {
+//   acc[element] = 1;
+// }
+
+// acc[element] = (acc[element] || 0) + 1;
+
+//     return acc;
+//   }, {});
+
+//   console.log(allTopics);
+
+// const allTopics = courses
+//   .flatMap((course) => course.topics)
+//   .reduce(
+//     (acc, element) => ({
+//       ...acc,
+//       [element]: acc[element] ? (acc[element] += 1) : 1,
+//     }),
+//     {}
+//   );
+
+// console.log(allTopics);
