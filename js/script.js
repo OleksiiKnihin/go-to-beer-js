@@ -92,82 +92,84 @@
 // console.log(number);
 
 //Нарциса знають всі, нарцис незнає нікого
-// const people = [
-//   {
-//     name: 'Alex',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Eva',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Ivan',
-//     know: ['Jhon', 'Eva'],
-//   },
-//   {
-//     name: 'Jhon',
-//     know: [],
-//   },
-// ];
-// //нарцис  'Jhon'
-// const people2 = [
-//   {
-//     name: 'Alex',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Jhon',
-//     know: [],
-//   },
-//   {
-//     name: 'Eva',
-//     know: [],
-//   },
-//   {
-//     name: 'Ivan',
-//     know: ['Jhon', 'Eva'],
-//   },
-// ];
-// //немає нарциса'
-// const people3 = [
-//   {
-//     name: 'Alex',
-//     know: ['Alex', 'Eva'],
-//   },
-//   {
-//     name: 'Jhon',
-//     know: [],
-//   },
-//   {
-//     name: 'Eva',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Ivan',
-//     know: ['Jhon', 'Eva'],
-//   },
-// ];
-// //немає нарциса
+const people = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+];
+//нарцис  'Jhon'
+const people2 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса
 
-// const people4 = [
-//   {
-//     name: 'Alex',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Jhon',
-//     know: ['Eva'],
-//   },
-//   {
-//     name: 'Eva',
-//     know: ['Alex', 'Jhon'],
-//   },
-//   {
-//     name: 'Ivan',
-//     know: ['Jhon', 'Eva'],
-//   },
-// ];
+const people4 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Eva'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+
+
 // //немає нарциса'
 
 // function findNarcys(array) {
@@ -194,6 +196,28 @@
 //   return narcys;
 // }
 // console.log(findNarcys(people4));
+
+
+function findNarcys(array){
+  const narcys = array.find((element) => element.know.length === 0);
+  if (!narcys) {
+    return "немає нарциса";
+  }
+  const allKnow = array.every(element => {if (narcys.name === element.name) 
+    {return true} return element.know.includes(narcys.name)})
+
+  console.log(allKnow);
+
+  if (allKnow){
+  return narcys.name;
+} else {
+  return "немає нарциса";
+}
+  
+}
+
+console.log(findNarcys(people));
+
 
 // =======================
 
@@ -349,43 +373,43 @@
 //   .sort((a, b) => b.price - a.price);
 // console.table(carsOnSale);
 
-const courses = [
-  {
-    name: "Basic HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
-  },
-  {
-    name: "Intermediate HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
-  },
-  {
-    name: "Basic JavaScript",
-    topics: [
-      "VSCode",
-      "Type system",
-      "Loops",
-      "Function",
-      "Git",
-      "Conditions",
-      "Classes",
-      "GitHub",
-      "DOM",
-    ],
-  },
-  {
-    name: "Intermediate JavaScript",
-    topics: [
-      "VSCode",
-      "NPM",
-      "Bundlers",
-      "Transpiling",
-      "Git",
-      "Promises",
-      "AJAX",
-      "GitHub",
-    ],
-  },
-];
+// const courses = [
+//   {
+//     name: "Basic HTML+CSS",
+//     topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
+//   },
+//   {
+//     name: "Intermediate HTML+CSS",
+//     topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
+//   },
+//   {
+//     name: "Basic JavaScript",
+//     topics: [
+//       "VSCode",
+//       "Type system",
+//       "Loops",
+//       "Function",
+//       "Git",
+//       "Conditions",
+//       "Classes",
+//       "GitHub",
+//       "DOM",
+//     ],
+//   },
+//   {
+//     name: "Intermediate JavaScript",
+//     topics: [
+//       "VSCode",
+//       "NPM",
+//       "Bundlers",
+//       "Transpiling",
+//       "Git",
+//       "Promises",
+//       "AJAX",
+//       "GitHub",
+//     ],
+//   },
+// ];
 //Собрать в allTopics массив всех предметов всех курсов
 //Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы
 
